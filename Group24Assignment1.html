@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+
+body {
+  background-image: url(http://www.color-hex.com/palettes/7707.png);
+  background-repeat: repeat;
+}
+
+.jumbotron{
+ background-image: url(https://www.solidsurfacekitchens.co.uk/ekmps/shops/ssk2010/images/artis-crystal-pure-white-plain-worktops-accessories-wu-products-adhesive-bb-complete-290ml-17063-p[ekm]303x303[ekm].jpg);
+ background-repeat: repeat;
+ margin-top: 50px;
+ padding-top: 50px;
+ padding-right: 80px;
+ padding-bottom: 50px;
+ padding-left: 80px;
+ height: 400px;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.text{
+  padding-top: 50px;
+  padding-right: 80px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+.rounded{
+  border-radius:50%;
+}
+
+.centre{
+  text-align:center;
+}
+
+</style>
+  <title>Assignment 1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Art Gallery</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Artwork
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0);" onclick="artwork('Mona_Lisa', '505', '755');">Mona Lisa</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('Lady_Liberty_Leading_The_People', '800', '600');">Lady Liberty Leading the People</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('The_Creation_Of_Adam', '973', '442');">The Creation of Adam</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('The_Starry_Night', '691', '547');">The Starry Night</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('Nude_Green_Leaves_And_Bust', '533', '640');">Nude, Green Leaves and Bust</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Artists
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0);" onclick="artwork('Leonardo_Da_Vinci', '525', '652');">Leonardo da Vinci</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('Eugene_Delacroix', '506', '616');">Eugène Delacroix</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('Michelangelo', '504', '504');">Michelangelo</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('Vincent_van_Gogh', '503', '632');">Van Gogh</a></li>
+          <li><a href="javascript:void(0);" onclick="artwork('Pablo_Picasso', '504', '420');">Picasso</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+      <div class="container">
+        <div class="text">
+        <h1 class="jumbotron-heading">Classical Art Gallery</h1>
+        <br>
+        <br>
+        <p class="lead text-muted">This is our assignment 1 for CPS 630 - Web Development II. Click any of the
+        dropdowns at the top of the page to display any of the paintings/artists. Scroll a bit lower to see a bit
+      about our good looking team.  </p>
+      </div>
+      </div>
+    </div>
+
+<!-- Profiles -->
+<div class="container">
+<h1><i>The Group</i></h1>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-4 centre">
+    <img  class ="rounded" width="300" height="300" src="./noah.png" alt="picture of noah">
+    <h3>Noah Lattari</h3>
+    <h4>Student ID: 500760404</h4>
+    <p>Noah was in charge of the front-end design/aesthetics of the webpage, he also made Jacky come out
+      of his coding retirement.
+    </p>
+  </div>
+
+  <div class="col-sm-4 centre">
+    <img class ="rounded" width="300" height="300" src="./jacky.png" alt="picture of jacky">
+    <h3>Jacky Tran</h3>
+    <h4>Student ID: 500766582</h4>
+    <p>Jacky was responsible for the functionality of the website, using JavaScript to make
+      the navigation bar work as instructed in the assignment document.</p>
+  </div>
+
+  <div class="col-sm-4 centre">
+    <img class ="rounded" width="300" height="300" src="./thomas.png" alt="picture of thomas">
+    <h3>Thomas Liu</h3>
+    <h4>Student ID: 500717670</h4>
+    <p>Thomas was also responsible for the front-end design of the webpage.
+    He designed the bottom half of the Home page -- The part you're reading right now!</p>
+  </div>
+</div>
+</div>
+
+
+    </body>
+    <script>
+    function artwork(value, widthdim, heightdim){
+      artInfoWindow=window.open(value+".html","","width=500,height=375");
+      artWindow=window.open(value+".PNG","","width=200,height=200");
+      resize(widthdim, heightdim);
+    }
+    function resize(widthdim, heightdim){
+      var imagePosY = (artWindow.screen.availHeight/2)-(heightdim/2);
+      artInfoWindow.moveTo(0,imagePosY);
+      artWindow.resizeTo(widthdim, heightdim);
+      artWindow.moveTo(490,imagePosY);
+      artWindow.focus();
+    }
+    </script>
+</html>
